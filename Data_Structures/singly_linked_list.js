@@ -90,11 +90,6 @@ class SinglyLinkedList {
       current = current.next;
     }
   }
-
-  print() {
-    console.log("Head ->", JSON.stringify(this.head));
-    console.log("Tail ->", JSON.stringify(this.tail));
-  }
 }
 
 module.exports = SinglyLinkedList;
