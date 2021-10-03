@@ -22,18 +22,4 @@ class Stack {
   }
 }
 
-let myStack = new Stack(); //create item of type stack
-//push elements to a stack
-myStack.push(2);
-myStack.push(3);
-myStack.push(9);
-myStack.push(1);
-
-//print stack
-console.log("Your stack is:\n" + myStack.print());
-
-myStack.pop(); //LIFO - Last In First Out Principle
-
-console.log("After pop\n");
-
-console.log("Your stack is:\n" + myStack.print());
+module.exports = Stack;
