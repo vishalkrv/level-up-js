@@ -97,18 +97,4 @@ class SinglyLinkedList {
   }
 }
 
-const list = new SinglyLinkedList();
-list.addNode(23);
-list.addNode(16);
-list.addNode(9);
-// list.addNode(40);
-list.print();
-
-// console.log("Insert After\n");
-// list.insertAfter(3, 16);
-// list.print();
-
-// console.log("Removing\n");
-
-// list.removeNode(9);
-// list.print();
+module.exports = SinglyLinkedList;
