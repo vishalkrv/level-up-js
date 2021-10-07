@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
-        "inorder"
+        "inorder",
+        "postOrder",
+        "preOrder"
     ]
 }
