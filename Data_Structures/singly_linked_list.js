@@ -1,23 +1,23 @@
 function Node(data) {
-  //By default, the new node’s next value is null, and its data is equal
-  //to the data we pass as an argument.
+  // By default, the new node’s next value is null, and its data is equal
+  // to the data we pass as an argument.
   this.data = data;
   this.next = null;
 }
 
 class SinglyLinkedList {
   constructor() {
-    //If the list doesn’t have any nodes, both the head (the first node in the list) and
+    // If the list doesn’t have any nodes, both the head (the first node in the list) and
     // the tail (the last node in the list) don’t exist, so their values are equal to null.
     this.head = null;
     this.tail = null;
   }
 
-  //function to add a node to the tail
+  // function to add a node to the tail
   addNode(data) {
     const node = new Node(data);
     if (!this.head) {
-      //If there is no head in the list, meaning that there are no nodes at all in the list,
+      // If there is no head in the list, meaning that there are no nodes at all in the list,
       // the new node is both the head and the tail.
       this.head = node;
       this.tail = node;
@@ -27,7 +27,7 @@ class SinglyLinkedList {
     }
   }
 
-  //The insertAfter function receives two arguments: the data for the new node,
+  // The insertAfter function receives two arguments: the data for the new node,
   // and the data of the node after which we want to add the new node.
   // As we start traversing the list again, we set the default value of the
   // currently checked node to the head. While there is a head, meaning that the list isn’t empty,
@@ -56,7 +56,7 @@ class SinglyLinkedList {
     }
   }
 
-  //There are two variables, previous and current.
+  // There are two variables, previous and current.
   // current represents the currently checked node,
   // previous represents the currently checked node’s previous node.
   // To find the node we want to remove, we always start from the beginning of the list, the head.
@@ -68,7 +68,7 @@ class SinglyLinkedList {
   // Let’s say that we want to remove the node with the data equal to 9.
   // We find the node, and set the previous node’s next value equal to the next node.
 
-  //If the node we want to delete is the head of the list, we set the current head’s node next value equal to this.head.
+  // If the node we want to delete is the head of the list, we set the current head’s node next value equal to this.head.
 
   removeNode(data) {
     let previous = this.head;
