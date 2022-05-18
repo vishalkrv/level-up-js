@@ -26,4 +26,13 @@ describe("Stack", () => {
     expect(myStack.stack).toHaveLength(3);
     expect(myStack.stack).toEqual(expect.not.arrayContaining(["9"]));
   });
+
+  it("should print 1234", () => {
+    const myStack = new Stack();
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+    myStack.push(4);
+    expect(myStack.print()).toEqual('1234');
+  });
 });

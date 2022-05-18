@@ -26,4 +26,14 @@ describe("Queue", () => {
     expect(myQueue.queue).toHaveLength(3);
     expect(myQueue.queue).toEqual(expect.not.arrayContaining(["2"]));
   });
+
+  it("should print 1234", () => {
+    const myQueue = new Queue();
+    myQueue.enqueue(1);
+    myQueue.enqueue(2);
+    myQueue.enqueue(3);
+    myQueue.enqueue(4);
+    expect(myQueue.print()).toEqual("1234");
+  });
+
 });

@@ -21,6 +21,10 @@ class Stack {
     //pop takes no argument and automatically removes the top element
     this.stack.pop()
   }
+  print () {
+    let str = this.stack.reduce((prev, current) => prev + '' + current)
+    return str
+  }
 }
 
 module.exports = Stack
