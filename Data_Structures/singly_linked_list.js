@@ -1,29 +1,29 @@
-function Node(data) {
+function Node (data) {
   // By default, the new node’s next value is null, and its data is equal
   // to the data we pass as an argument.
-  this.data = data;
-  this.next = null;
+  this.data = data
+  this.next = null
 }
 
 class SinglyLinkedList {
-  constructor() {
+  constructor () {
     // If the list doesn’t have any nodes, both the head (the first node in the list) and
     // the tail (the last node in the list) don’t exist, so their values are equal to null.
-    this.head = null;
-    this.tail = null;
+    this.head = null
+    this.tail = null
   }
 
   // function to add a node to the tail
-  addNode(data) {
-    const node = new Node(data);
+  addNode (data) {
+    const node = new Node(data)
     if (!this.head) {
       // If there is no head in the list, meaning that there are no nodes at all in the list,
       // the new node is both the head and the tail.
-      this.head = node;
-      this.tail = node;
+      this.head = node
+      this.tail = node
     } else {
-      this.tail.next = node;
-      this.tail = node;
+      this.tail.next = node
+      this.tail = node
     }
   }
 
@@ -38,21 +38,21 @@ class SinglyLinkedList {
   // meaning that we’re just adding a new node to the end of the list,
   // the tail’s next value is equal to the new node, and now the new node equals the tail.
   // Else, the new node’s next value equals the currently checked node’s next value.
-  insertAfter(data, toNodeData) {
-    let current = this.head;
+  insertAfter (data, toNodeData) {
+    let current = this.head
     while (current) {
       if (current.data === toNodeData) {
-        const node = new Node(data);
+        const node = new Node(data)
         if (current === this.tail) {
-          this.tail.next = node;
-          this.tail = node;
+          this.tail.next = node
+          this.tail = node
         } else {
-          node.next = current.next;
-          current.next = node;
-          break;
+          node.next = current.next
+          current.next = node
+          break
         }
       }
-      current = current.next;
+      current = current.next
     }
   }
 
@@ -70,26 +70,33 @@ class SinglyLinkedList {
 
   // If the node we want to delete is the head of the list, we set the current head’s node next value equal to this.head.
 
-  removeNode(data) {
-    let previous = this.head;
-    let current = this.head;
-
+  removeNode (data) {
+    let previous = this.head
+    let current = this.head
     while (current) {
       if (current.data === data) {
-        if (current === this.head) {
-          this.head = this.head.next;
-        }
         if (current === this.tail) {
-          this.tail = previous;
+          if (!this.head) {
+            this.tail = null
+          } else {
+            this.tail = previous
+          }
         }
-
-        previous.next = current.next;
+        if (current === this.head) {
+          this.head = this.head.next
+        }
+        previous.next = current.next
       } else {
-        previous = current;
+        previous = current
       }
-      current = current.next;
+      current = current.next
     }
   }
 }
 
-module.exports = SinglyLinkedList;
+/**
+ * A singly linked list is a linear data structure.
+ * Each element, called a node, is connected to the other,
+ * by pointers (or references) to the next node.
+ */
+module.exports = SinglyLinkedList
