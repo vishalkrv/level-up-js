@@ -1,3 +1,11 @@
+/**
+ * 
+ * +-------------------------------+---------+-------+-------+
+ * |             Type              | Average | Worst | Worst |
+ * +-------------------------------+---------+-------+-------+
+ * | Get,Search,Insertion,Deletion | O(n)    |  O(n) | O(n)  |
+ * +-------------------------------+---------+-------+-------+
+ */
 //By default, the node’s previous and next values equal to null.
 function Node(data) {
   this.data = data;

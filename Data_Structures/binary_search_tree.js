@@ -57,7 +57,7 @@ class BinarySearchTree {
   }
 
   removeNode(node, data) {
-    // Nodes are present in the tree, so !node returns false.
+    // Nodes are not present in the tree, so !node returns false.
     if (!node) {
       return null;
     }
