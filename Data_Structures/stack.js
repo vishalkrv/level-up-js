@@ -10,20 +10,31 @@
  */
 class Stack {
   constructor () {
-    this.stack = []
+    this.list = []
   }
 
   push (data) {
-    this.stack.push(data)
+    this.list.push(data)
+  }
+
+  isEmpty () {
+    return this.list.length === 0
   }
 
   pop () {
+    if (this.isEmpty()) throw new Error('Empty Stack')
     //pop takes no argument and automatically removes the top element
-    this.stack.pop()
+    return this.list.pop()
   }
+
+  peek () {
+    if (this.isEmpty()) throw new Error('Empty Stack')
+    return this.list[this.list.length - 1]
+  }
+
   print () {
-    let str = this.stack.reduce((prev, current) => prev + '' + current)
-    return str
+    let str = this.list.reduce((prev, current) => prev + '' + current)
+    return str.toString() // cast toString() implemented in case single value is returned
   }
 }
 

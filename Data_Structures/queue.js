@@ -16,12 +16,20 @@ class Queue {
     this.queue.push(data)
   }
   dequeue (data) {
+    if(this.isEmpty()) throw "Queue is empty";
     //does not need an argument because it deletes the elements that was inserted first
     return this.queue.shift()
   }
+  isEmpty () {
+    return this.queue.length === 0
+  }
+
+  front () {
+    return this.queue[0]
+  }
   print () {
     let str = this.queue.reduce((prev, current) => prev + '' + current)
-    return str
+    return str.toString() // cast toString() implemented in case single value is returned
   }
 }
 

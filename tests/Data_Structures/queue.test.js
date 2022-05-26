@@ -5,7 +5,7 @@ describe("Queue", () => {
   it("should be able to take a value", () => {
     const myQueue = new Queue();
     myQueue.enqueue(2);
-    expect(myQueue.queue).toHaveLength(1);
+    expect(myQueue.print()).toEqual("2");
   });
 
   it("should be able to take more than one value", () => {
@@ -13,7 +13,7 @@ describe("Queue", () => {
     myQueue.enqueue(2);
     myQueue.enqueue(5);
     myQueue.enqueue(9);
-    expect(myQueue.queue).toHaveLength(3);
+    expect(myQueue.print()).toEqual("259");
   });
 
   it("should remove the first value when dequeue method is called", () => {
@@ -23,8 +23,7 @@ describe("Queue", () => {
     myQueue.enqueue(5);
     myQueue.enqueue(9);
     myQueue.dequeue();
-    expect(myQueue.queue).toHaveLength(3);
-    expect(myQueue.queue).toEqual(expect.not.arrayContaining(["2"]));
+    expect(myQueue.print()).toEqual("859");
   });
 
   it("should print 1234", () => {
